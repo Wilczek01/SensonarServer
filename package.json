@@ -1,0 +1,16 @@
+{
+  "name"         : "air-sensonar ",
+  "version"      : "0.0.1",
+  "main"         : "AirServer.js",
+  "author"       : "GR",
+  "dependencies" : {
+    "body-parser"    : "^1.4.3",
+    "express"        : "^4.13.4",
+    "mongoose"       : "^4.4.12",
+
+  },
+  "scripts": {
+  "start": "node AirServer.js"
+  }
+}
+
