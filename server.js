@@ -10,8 +10,11 @@ app.use(cors());
 
 var mongoose = require('mongoose');
 
-app.listen(3000, function () {
-    console.log("App listening on port 3000");
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
+app.listen(server_port, server_ip_address, function () {
+	console.log( "Listening on " + server_ip_address + ", port " + server_port )
     mongoose.connect('mongodb://air:air2017@ds133981.mlab.com:33981/cleanair');
     var db = mongoose.connection;
     db.on('error', console.error.bind(console, 'b³¹d po³¹czenia z baza danych...'));
